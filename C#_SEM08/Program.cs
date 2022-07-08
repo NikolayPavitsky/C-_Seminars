@@ -446,6 +446,33 @@ int[,] ModifyArr2d(int[,] array, int[] ijIndex)
 //
 
 //
+// Task 61
+// To print the Pascal's triangle
+//
+// void PascalTriangle(int nRows)
+// {
+//     for (int y = 0; y < nRows; y++)
+//     {
+//         int val = 1;
+//         for (int blank = 0; blank < nRows - y; blank++)
+//         {
+//             Console.Write("   ");
+//         }
+//         for (int x = 0; x <= y; x++)
+//         {
+//             Console.Write("    {0:D} ", val);
+//             val = val * (y - x) / (x + 1);
+//         }
+//         Console.WriteLine();
+//         Console.WriteLine();
+//     }
+// }
+// Console.Clear();
+// Console.Write("Please enter number of rows in Pascal's triangle   ");
+// int rows = int.Parse(Console.ReadLine());
+// PascalTriangle(rows);
+
+//
 // Task 62
 // To fill the 2d array of any size in a spiral
 //
@@ -453,10 +480,6 @@ void FillArray(int[,] array, int row, int col, int val, int dir){
     if(array[row, col] == 0){
         val += 1;
         array[row, col] = val;
-        // if(col < array.GetLength(1)-1 || array[row,col+1] == 0) FillArray(array, row, col+1, val);
-        // if(row < array.GetLength(0)-1 || array[row+1,col] == 0) FillArray(array, row+1, col, val);
-        // if(col > 0 || array[row,col-1] == 0) FillArray(array, row, col-1, val);
-        // if(row > 0 || array[row-1,col] == 0) FillArray(array, row-1, col, val);
         if(dir==1)
         {
             if(col < array.GetLength(1)-1)
@@ -611,6 +634,7 @@ void ChangeDirection(int dir, int row, int col, int val, int [,] array)
 }
 //
 Console.Clear();
+Console.WriteLine("filling 2d array of any size in a spiral");
 Console.Write("Please enter number of rows in the array   ");
 int rows = int.Parse(Console.ReadLine());
 Console.Write("Please enter number of columns in the array   ");
@@ -629,3 +653,4 @@ int val = 0;
 int dir = 1;
 FillArray(array, 0, 0, val, dir);
 PrintArray2dInt(array);
+
